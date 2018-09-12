@@ -1,0 +1,12 @@
+{
+  "name": "primercontacto",
+  "version": "1.0.0",
+  "description": "Primer contacto con TypeScript",
+  "scripts": {
+    "compilar": "tsc --watch",
+    "limpiar": "rmdir /S/Q dist",
+    "dev": "lite-server --baseDir=\"dist\""
+  },
+  "author": "",
+  "license": "ISC"
+}

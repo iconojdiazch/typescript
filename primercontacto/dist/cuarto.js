@@ -1,0 +1,11 @@
+var mostrar = function (n) { return console.log(n); };
+var numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+numeros.forEach(function (numero) { return console.log(numero); });
+var r1 = numeros.map(function (n) { return n + 1; });
+r1.forEach(mostrar);
+var r2 = numeros.filter(function (n) { return n % 2 === 0; });
+r2.forEach(mostrar);
+var r3 = numeros.reduce(function (a, b) { return a + b; });
+console.log('La suma es: ' + r3);
+numeros.reverse().sort().forEach(mostrar);
+numeros.sort(function (a, b) { return b - a; }).forEach(mostrar);
