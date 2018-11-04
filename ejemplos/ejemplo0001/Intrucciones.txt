@@ -1,0 +1,22 @@
+Node.js debe estar instalado
+TypeScript debe estar instalado: npm i -g typescript
+Crear el archivo main.ts y escribir en él:
+    una función JavaScript pura que reciba un texto como parámetro y lo devuelva en mayúsculas
+    mostrar el texto por consola
+Compilar el archivo main.ts: tsc main.ts. Inspeccionar el archivo main.js
+Ejecutar el archivo generado con node: node main.js
+Crear la página index.html y vincularla con el archivo main.js
+Instalar lite-server: npm i -g lite-server
+Desde el directorio raíz del ejemplo: lite-server
+Cuando aparezca la página en el navegador, abrir la consola.
+Desde una nueva ventana de comandos: tsc main.ts --watch
+En el archivo main.ts, añadir información de tipo explícita:
+    el parámetro es de tipo string y la función devuelve una string
+    cambiar el texto de la llamada a la función
+    escribir un código JS para que el mensaje aparezca también en la página index.html
+Observar la página y la consola del navegador
+Desde una ventana de comandos escribir: tsc --init e inspeccionar el archivo tsconfig.json recién creado
+
+
+
+

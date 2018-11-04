@@ -4,7 +4,7 @@
   "description": "Primer contacto con TypeScript",
   "scripts": {
     "compilar": "tsc --watch",
-    "limpiar": "rmdir /S/Q dist",
+    "limpiar": "rmdir /S/Q dist && mkdir dist && copy index.html dist",
     "dev": "lite-server --baseDir=\"dist\""
   },
   "author": "",
