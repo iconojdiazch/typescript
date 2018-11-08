@@ -1,0 +1,2 @@
+Desde una ventana de comandos, ejecutar:
+tsc --outfile resultado.js uso.ts && node resultado.js && del *.js

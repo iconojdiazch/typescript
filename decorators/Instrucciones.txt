@@ -1,0 +1,2 @@
+Desde una ventana de comandos, ejecutar:
+tsc --target ES5 --experimentalDecorators decoradorsimple.ts && node decoradorsimple.js && del *.js

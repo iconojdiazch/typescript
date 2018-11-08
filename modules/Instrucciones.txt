@@ -1,0 +1,2 @@
+Desde una ventana de comandos, ejecutar:
+tsc --module commonjs uso.ts && node uso.js && del *.js
