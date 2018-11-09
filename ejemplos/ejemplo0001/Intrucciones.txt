@@ -12,10 +12,10 @@ Cuando aparezca la página en el navegador, abrir la consola.
 Desde una nueva ventana de comandos: tsc main.ts --watch
 En el archivo main.ts, añadir información de tipo explícita:
     el parámetro es de tipo string y la función devuelve una string
-    cambiar el texto de la llamada a la función
-    escribir un código JS para que el mensaje aparezca también en la página index.html
-Observar la página y la consola del navegador
-Desde una ventana de comandos escribir: tsc --init e inspeccionar el archivo tsconfig.json recién creado
+    cambiar el texto de la llamada a la función    
+Observar la consola del navegador
+Desde una ventana de comandos escribir: tsc --init e inspeccionar el archivo
+tsconfig.json recién creado
 
 
 

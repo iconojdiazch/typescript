@@ -1,0 +1,9 @@
+<h1>
+  {{title}}
+</h1>
+<h2>Información obtenida desde la base de datos remota</h2>
+<ul>
+  <li *ngFor="let usuario of usuarios | async">
+    {{usuario.name}}, {{usuario.email}}
+  </li>
+</ul>

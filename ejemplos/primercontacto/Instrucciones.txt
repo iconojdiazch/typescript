@@ -1,0 +1,16 @@
+Instalar Node.js
+Abrir una ventana de comandos sobre la carpeta 'primercontacto' 
+Instalar TypeScript: npm install -g typescript
+Instalar lite-server: npm install -g lite-server
+Compilar el archivo 'primero.ts': tsc primero.ts
+Comprobar que aparece el archivo 'primero.js' e inspeccionarlo
+Ejecutar el programa: lite-server
+Observar que si modificamos el archivo 'primero.ts' y lo recompilamos,
+el programa lite-server actualiza el navegador automáticamente
+Empleando npm
+Compilar el programa: npm run compilar
+Arrancarlo: npm run dev
+Hacer limpieza:
+    Matar el proceso que creamos con npm run compilar (CTRL+C)
+    Matar el proceso que creamos con npm run dev (CTRL+C)
+    Ejecutar npm run limpiar
