@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+    mode: 'production',
     entry: './src/index.ts',
     devtool: 'inline-source-map',
     resolve: {
@@ -12,19 +13,6 @@ module.exports = {
     },
     module: {
         rules: [
-            {
-                test: /\.css$/,
-                use: [
-                    'style-loader',
-                    'css-loader'
-                ]
-            },
-            {
-                test: /\.(png|svg|jpg|gif)$/,
-                use: [
-                    'file-loader'
-                ]
-            },
             {
                 test: /\.tsx?$/,
                 use: 'ts-loader',

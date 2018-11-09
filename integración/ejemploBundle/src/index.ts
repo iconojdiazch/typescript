@@ -7,12 +7,10 @@ class Persona {
 
 const p = new Persona('Un nombre cualquiera');
 
-let element = document.createElement('div');
+const element = document.createElement('div');
 
 element.innerHTML = p.nombre;
+element.style.color = 'blue';
+element.style.fontSize = '2rem';
 
 document.body.appendChild(element);
-
-
-
-
