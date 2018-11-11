@@ -1,2 +1,11 @@
 Desde una ventana de comandos, ejecutar:
 tsc --target ES5 --experimentalDecorators decoradorsimple.ts && node decoradorsimple.js && del *.js
+También podemos crear un tsconfig.js con este contenido:
+{
+    "compilerOptions": {
+        "target": "ES5",
+        "experimentalDecorators": true
+    }
+}
+y ejecutar desde la línea de comandos
+tsc && node decoradorsimple.js && del *.js

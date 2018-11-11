@@ -72,13 +72,13 @@ namespace ejercicio0004 {
         maullar(): string;
     }
     const gato: Gato = {
-        nombre: 'Gato',
+        nombre: 'Gato usando interfaces',
         edad: 8,
         maullar: function () { return 'Miau'; },
         mostrar: function () { return `Soy un ${this.nombre}, mi edad es ${this.edad} y digo ${this.maullar()}`; }
     }
     const perro: Perro = {
-        nombre: 'Perro',
+        nombre: 'Perro usando interfaces',
         ladrar: function () { return 'Guau'; },
         mostrar: function () {
             return this.edad ?
@@ -95,4 +95,83 @@ namespace ejercicio0004 {
         console.log(animal.mostrar());
     }
     animales.forEach(a => console.log(a.mostrar()));
+}
+namespace ejercicio0005 {
+    abstract class Animal {
+        abstract mostrar(): string;
+        constructor(public nombre: string, public edad?: number) { }
+    }
+    class Perro extends Animal {
+        constructor(nombre: string, edad: number) {
+            super(nombre, edad);
+        }
+        ladrar(): string { return 'Guau'; };
+        mostrar() {
+            return this.edad ?
+                `Soy un ${this.nombre}, mi edad es ${this.edad} y digo ${this.ladrar()}`
+                :
+                this.ladrar();
+        }
+    }
+    class Gato extends Animal {
+        constructor(nombre: string, edad: number) {
+            super(nombre, edad);
+        }
+        maullar(): string { return 'Miau'; };
+        mostrar() { return `Soy un ${this.nombre}, mi edad es ${this.edad} y digo ${this.maullar()}`; }
+    }
+    const gato: Gato = new Gato('Gato usando clases', 8);
+    const perro: Perro = new Perro('Perro usando clases', 10);
+
+    const animales: Animal[] = [gato, perro];
+    animales.forEach(a => console.log(a.mostrar()));
+}
+
+namespace ejercicio0006 {
+    export class Repo<T extends { nombre: string, edad: number }> {
+        private readonly repo: T[] = [];
+        guardarUnaVez(...objetos: T[]) {
+            objetos.forEach(
+                p => {
+                    if (this.repo.indexOf(p) !== -1) {
+                        console.log(`El objeto ${JSON.stringify(p)} ya existe`);
+                    }
+                    else {
+                        this.repo.push(p);
+                        console.log(`Nuev objeto ${JSON.stringify(p)} añadido`);
+                    }
+                }
+            );
+            return objetos;
+        }
+        localizarPorNombre(n: string) {
+            return this.repo.filter(p => p.nombre === n);
+        }
+        cambiarTodasLasEdades(e: number) {
+            return this.repo.map(p => ({ nombre: p.nombre, edad: e }));
+        }
+    }
+}
+namespace ejercicio0006_1 {
+    class Persona {
+        constructor(public nombre: string, public edad: number) { }
+    }    
+    const r = new ejercicio0006.Repo<Persona>();
+    const p = new Persona('abc usando clases', 25);
+    const p1 = new Persona('def usando clases', 30);
+    r.guardarUnaVez(p, p1, p);
+    console.log(r.localizarPorNombre('def usando clases'));
+    console.log(r.cambiarTodasLasEdades(20));
+}
+namespace ejercicio0006_2 {
+    type Persona = {
+        nombre: string;
+        edad: number;
+    }
+    const r = new ejercicio0006.Repo<Persona>();
+    const p = { nombre: 'abc usando tipos', edad: 25 };
+    const p1 = { nombre: 'def usando tipos', edad: 30 };
+    r.guardarUnaVez(p, p1, p);
+    console.log(r.localizarPorNombre('def usando tipos'));
+    console.log(r.cambiarTodasLasEdades(20));
 }

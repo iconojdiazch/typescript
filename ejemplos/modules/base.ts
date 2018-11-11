@@ -4,6 +4,7 @@ const repo: Identificable[] = [];
 export class Base implements Identificable {
   constructor(public id: number) { }
   guardar() {
+    console.log(`Guardando... ${JSON.stringify(this)}`);
     repo.push(this);
   }
   mostrar() {
