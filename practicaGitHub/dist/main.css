@@ -1,0 +1,10 @@
+header, footer{
+    font-size: 2em;
+    color:brown
+}
+input, button, div{
+    font-size: 1.5em
+}
+div > div{
+    font-size: 1.0em
+}
