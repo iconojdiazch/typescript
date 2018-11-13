@@ -1,4 +1,3 @@
-"use strict";
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -148,6 +147,40 @@ var ejercicio0005;
 })(ejercicio0005 || (ejercicio0005 = {}));
 var ejercicio0006;
 (function (ejercicio0006) {
+    var ConjuntoImpl = /** @class */ (function () {
+        function ConjuntoImpl() {
+            this.almacen = [];
+        }
+        ConjuntoImpl.prototype.nuevo = function (item) {
+            if (this.buscar(item) === null) {
+                this.almacen.push(item);
+                return true;
+            }
+            else {
+                return false;
+            }
+        };
+        ConjuntoImpl.prototype.buscar = function (item) {
+            var z = this.almacen.filter(function (e) { return e === item; });
+            if (z.length === 0)
+                return null;
+            else
+                return z[0];
+        };
+        ConjuntoImpl.prototype.mostrar = function () {
+            this.almacen.forEach(function (i) { return console.log(i); });
+        };
+        return ConjuntoImpl;
+    }());
+    ;
+    var p = { n: 'abc', e: 20 };
+    var c = new ConjuntoImpl();
+    console.log(c.nuevo(p));
+    console.log(c.nuevo(p));
+    c.mostrar();
+})(ejercicio0006 || (ejercicio0006 = {}));
+var ejercicio0007;
+(function (ejercicio0007) {
     var Repo = /** @class */ (function () {
         function Repo() {
             this.repo = [];
@@ -177,10 +210,10 @@ var ejercicio0006;
         };
         return Repo;
     }());
-    ejercicio0006.Repo = Repo;
-})(ejercicio0006 || (ejercicio0006 = {}));
-var ejercicio0006_1;
-(function (ejercicio0006_1) {
+    ejercicio0007.Repo = Repo;
+})(ejercicio0007 || (ejercicio0007 = {}));
+var ejercicio0007_1;
+(function (ejercicio0007_1) {
     var Persona = /** @class */ (function () {
         function Persona(nombre, edad) {
             this.nombre = nombre;
@@ -188,19 +221,19 @@ var ejercicio0006_1;
         }
         return Persona;
     }());
-    var r = new ejercicio0006.Repo();
+    var r = new ejercicio0007.Repo();
     var p = new Persona('abc usando clases', 25);
     var p1 = new Persona('def usando clases', 30);
     r.guardarUnaVez(p, p1, p);
     console.log(r.localizarPorNombre('def usando clases'));
     console.log(r.cambiarTodasLasEdades(20));
-})(ejercicio0006_1 || (ejercicio0006_1 = {}));
-var ejercicio0006_2;
-(function (ejercicio0006_2) {
-    var r = new ejercicio0006.Repo();
+})(ejercicio0007_1 || (ejercicio0007_1 = {}));
+var ejercicio0007_2;
+(function (ejercicio0007_2) {
+    var r = new ejercicio0007.Repo();
     var p = { nombre: 'abc usando tipos', edad: 25 };
     var p1 = { nombre: 'def usando tipos', edad: 30 };
     r.guardarUnaVez(p, p1, p);
     console.log(r.localizarPorNombre('def usando tipos'));
     console.log(r.cambiarTodasLasEdades(20));
-})(ejercicio0006_2 || (ejercicio0006_2 = {}));
+})(ejercicio0007_2 || (ejercicio0007_2 = {}));

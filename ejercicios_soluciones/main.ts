@@ -126,8 +126,41 @@ namespace ejercicio0005 {
     const animales: Animal[] = [gato, perro];
     animales.forEach(a => console.log(a.mostrar()));
 }
-
 namespace ejercicio0006 {
+    interface Conjunto<T> {
+        nuevo(item: T): boolean;
+        buscar(item: T): T;
+        mostrar(): void;
+    }
+    class ConjuntoImpl<T> implements Conjunto<T>{
+        private readonly almacen: T[] = [];
+        nuevo(item: T): boolean {
+            if (this.buscar(item) === null) {
+                this.almacen.push(item);
+                return true;
+            } else {
+                return false;
+            }
+        }
+        buscar(item: T): T {
+            const z = this.almacen.filter(e => e === item);
+            if (z.length === 0)
+                return null;
+            else
+                return z[0];
+        }
+        mostrar() {
+            this.almacen.forEach(i => console.log(i));
+        }
+    }
+    interface Persona { n: string, e: number };
+    const p: Persona = { n: 'abc', e: 20 };
+    const c: Conjunto<Persona> = new ConjuntoImpl<Persona>();
+    console.log(c.nuevo(p));
+    console.log(c.nuevo(p));
+    c.mostrar();
+}
+namespace ejercicio0007 {
     export class Repo<T extends { nombre: string, edad: number }> {
         private readonly repo: T[] = [];
         guardarUnaVez(...objetos: T[]) {
@@ -152,23 +185,23 @@ namespace ejercicio0006 {
         }
     }
 }
-namespace ejercicio0006_1 {
+namespace ejercicio0007_1 {
     class Persona {
         constructor(public nombre: string, public edad: number) { }
-    }    
-    const r = new ejercicio0006.Repo<Persona>();
+    }
+    const r = new ejercicio0007.Repo<Persona>();
     const p = new Persona('abc usando clases', 25);
     const p1 = new Persona('def usando clases', 30);
     r.guardarUnaVez(p, p1, p);
     console.log(r.localizarPorNombre('def usando clases'));
     console.log(r.cambiarTodasLasEdades(20));
 }
-namespace ejercicio0006_2 {
+namespace ejercicio0007_2 {
     type Persona = {
         nombre: string;
         edad: number;
     }
-    const r = new ejercicio0006.Repo<Persona>();
+    const r = new ejercicio0007.Repo<Persona>();
     const p = { nombre: 'abc usando tipos', edad: 25 };
     const p1 = { nombre: 'def usando tipos', edad: 30 };
     r.guardarUnaVez(p, p1, p);
