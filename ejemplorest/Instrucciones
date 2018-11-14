@@ -1,0 +1,5 @@
+Instalar Node.js
+Ejecutar: npm install -g lite-server
+Colocarse en este directorio desde una ventana de comandos
+Ejecutar: lite-server
+Abrir la consola del navegador

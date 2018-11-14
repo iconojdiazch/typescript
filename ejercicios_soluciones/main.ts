@@ -208,14 +208,7 @@ namespace ejercicio0007_2 {
     console.log(r.localizarPorNombre('def usando tipos'));
     console.log(r.cambiarTodasLasEdades(20));
 }
-/* Crear la noción de Producto (id, cantidad, nombre, precio)
-Cargar un array con productos
-Obtener los productos con una cantidad mayor que tres
-Aplicar un descuento del 10% a todos los productos
-Ordenar los productos por precio
-Calcular el precio total de los productos
-Mostrar el resultado de las operaciones por consola */
-namespace transformacionFuncional {
+namespace ejercicio0009 {
     type Producto = {
         id: number;
         cantidad: number;
@@ -232,7 +225,7 @@ namespace transformacionFuncional {
         {
             id: 1,
             cantidad: 2,
-            nombre: 'Producto uno',
+            nombre: 'Producto dos',
             precio: 1000
         }
     ];
