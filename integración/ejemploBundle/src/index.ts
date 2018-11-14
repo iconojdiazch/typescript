@@ -1,9 +1,4 @@
-class Persona {
-    nombre: string;
-    constructor(n: string) {
-        this.nombre = n;
-    }
-}
+import {Persona} from './persona';
 
 const p = new Persona('Un nombre cualquiera');
 
