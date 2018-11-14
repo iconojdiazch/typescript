@@ -208,3 +208,49 @@ namespace ejercicio0007_2 {
     console.log(r.localizarPorNombre('def usando tipos'));
     console.log(r.cambiarTodasLasEdades(20));
 }
+/* Crear la noción de Producto (id, cantidad, nombre, precio)
+Cargar un array con productos
+Obtener los productos con una cantidad mayor que tres
+Aplicar un descuento del 10% a todos los productos
+Ordenar los productos por precio
+Calcular el precio total de los productos
+Mostrar el resultado de las operaciones por consola */
+namespace transformacionFuncional {
+    type Producto = {
+        id: number;
+        cantidad: number;
+        nombre: string;
+        precio: number;
+    }
+    const productos: Producto[] = [
+        {
+            id: 1,
+            cantidad: 4,
+            nombre: 'Producto uno',
+            precio: 2000
+        },
+        {
+            id: 1,
+            cantidad: 2,
+            nombre: 'Producto uno',
+            precio: 1000
+        }
+    ];
+    const mayorQueTres = productos.filter(p => p.cantidad > 3);
+    const precioTotal = productos.map(p => p.precio).reduce((a, b) => a + b);
+    const descuentoDiezPorCiento = productos.map(
+        p => (
+            {
+                id: p.id,
+                cantidad: p.cantidad,
+                nombre: p.nombre,
+                precio: p.precio * 0.9
+            } as Producto
+        )
+    );
+    const ordenarPorPrecio = productos.sort((a, b) => a.precio - b.precio);
+    console.log('Cantidad mayor que tres: ' + JSON.stringify(mayorQueTres));
+    console.log('Precio total: ' + JSON.stringify(precioTotal));
+    console.log('Descuento 10%: ' + JSON.stringify(descuentoDiezPorCiento));
+    console.log('Ordenar por precio: ' + JSON.stringify(ordenarPorPrecio));    
+}
